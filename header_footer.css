@@ -1,0 +1,83 @@
+html {
+  overflow-x: hidden;
+}
+/* I was getting horizontal scroll bars on my page so I found out about the overflow feature from https://www.w3schools.com/css/css_overflow.asp#:~:text=The%20overflow%20property%20specifies%20whether,fit%20in%20the%20specified%20area. to solve this. */
+.nav_bar {
+  height: 100px;
+}
+.item_logo {
+  width: 200px;
+  margin-left: -4vw;
+  padding-top: 2vh;
+  transform: translateY(1.7vh);
+}
+/* I didn't know how to get the text in line with the svg image so I looked up https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate online and learned to use translate to change where the image is relative to the text. */
+.nav_list {
+  position: fixed;
+  width: 200%;
+  margin-top: -4.3vh;
+
+  background-color: white;
+}
+.nav_list ul li {
+  display: inline-block;
+  list-style: none;
+}
+.find_mentor {
+  margin-left: 30vw;
+}
+.application_enhancer {
+  margin-left: 2vw;
+}
+.contact_us {
+  margin-left: 2vw;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.peer {
+  font-style: italic;
+}
+
+h1 {
+  text-align: center;
+}
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.item_logo_2 {
+  grid-area: 1/1/3/2;
+  text-align: center;
+  margin-top: 5px;
+}
+.item_slogan {
+  grid-area: 3/1/5/2;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+}
+.item_contact_details {
+  grid-area: 1/2/2/3;
+  font-weight: bold;
+}
+.contact_list {
+  grid-area: 2/2/4/3;
+  list-style-type: none;
+  margin-left: -40px;
+  margin-top: -10px;
+}
+.footer li {
+  margin-bottom: 5px;
+}
+.item_go_to {
+  grid-area: 1/3/2/4;
+  font-weight: bold;
+}
+.go_to_list {
+  grid-area: 2/3/5/4;
+  list-style-type: none;
+  margin-left: -40px;
+  margin-top: -10px;
+}

@@ -5,8 +5,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="header_footer.css">
+    <style>
+      label {
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+        margin-right: 10px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        display: inline-block;
+        width: 250px;
+        box-sizing: border-box;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+
+      input[type="submit"] {
+        display: inline-block;
+        margin-bottom: 10px;
+        background-color: #4D6630;
+        color: white;
+        border-radius: 15%;
+        margin-left: 45%;
+      }
+      .form{
+        width: 45vw;
+      }
+      .map{
+        width: 50vw;
+      }
+      .content{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: #71855E;
+      }
+
+    </style>
   </head>
   <body>
+    <div class="nav_bar">
+      
+      <div class="nav_list">
+        <ul>
+          <li><a href="index.html"><img class="item_logo" src="images/PeerMentor_Logo.svg" /></a></li>
+          
+            <li><p class="peer">Peer-Mentored Pathways to Top Internships</p></li>
+            <li><a class="find_mentor" href="find_mentor.html">Find Mentor</a></li>
+            <li><a class="application_enhancer" href="application_enhancer.html">Application Enhancer</a></li>
+            <li><a class="contact_us" href="contact_us.html" >Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    <div class="content">
+<div class="form">
+  <h2>
+    Contact us form:
+  </h2>
+    <form
+      action="mailto:gboylan1@babson.edu"
+      method="post"
+      enctype="text/plain"
+    >
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" name="first_name" required /><br />
+
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" name="last_name" required /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br />
+
+      <label for="query">Query:</label>
+      <textarea id="query" name="query" rows="5" cols="40" required></textarea
+      ><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+  <div class="map">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.1604312319446!2d-71.26789638454575!3d42.296442079191145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e381418b1914ef%3A0x4ef71f3899e76a89!2sBabson%20College!5e0!3m2!1sen!2sus!4v1677769927187!5m2!1sen!2sus"
       width="600"
@@ -16,6 +97,25 @@
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
-   
+  </div>
+</div>
+<div class="footer">
+  <div class="item_logo_2"><img src="images/PeerMentor_Logo.svg" alt="Logo"></div>
+  <div class="item_slogan"><p>Peer-Mentored Pathways to Top Internships</p></div>
+  <div class="item_contact_details"><p>Contact:</p></div>
+  <ul class="contact_list">
+  <li><div class="item_email_address"><a href="mailto:info@peermentor.me">Email: info@peermentor.me</a></div></li>
+  <li><div class="item_phone_number"><a href="tel:+17813666450">Phone: +1 781 366 6450</a></div></li>
+  <!-- Figured out how to link to a phone number using https://www.campaignmonitor.com/blog/email-marketing/using-phone-numbers-in-html-email/#:~:text=Start%20your%20code%20with%20%3Ca,href%3D%20%E2%80%9Ctel%3A%2BYOURNUMBERHERE%E2%80%9D -->
+  <li><div class="item_linkedin"><a href="https://www.linkedin.com/company/peermentor/">LinkedIn: PeerMentor</a></div></li>
+</ul>
+  <div class="item_go_to"><p>Go to:</p></div>
+  <ul class="go_to_list">
+  <li><div class="item_home"><a href="index.html">Home</a></div></li>
+  <li><div class="item_find_mentor"><a href="find_mentor.html">Find Mentor</a></div></li>
+  <li><div class="item_application_enhancer"><a href="application_enhancer.html">Application Enhancer</a></div></li>
+  <li><div class="item_contact_us"><a href="contact_us.html">Contact Us</a></div></li>
+</ul>
+</div>
   </body>
 </html>

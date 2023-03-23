@@ -32,29 +32,45 @@
       .find_mentor {
         margin-left: 30vw;
       }
-      .application_enhancer{margin-left: 2vw;}
-      .contact_us{margin-left: 2vw;}
-    a{text-decoration: none;
-    color: black;}
-    .peer { font-style: italic; }
+      .application_enhancer{
+        margin-left: 2vw;
+      }
+      .contact_us{
+        margin-left: 2vw;
+      }
+    a{
+      text-decoration: none;
+    color: black;
+    }
+    .peer{
+      font-style: italic;
+    }
 
-    h1{text-align: center;}
+    h1{
+      text-align: center;
+    }
 
-    .mentor_rectangle{display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto auto auto;
+    .mentor_rectangle{
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto auto auto;
   }
-    .mentor_rectangle div {background-color: #71855E;
-    width: 45vw;
-  margin: 2px;
-display: grid;
-grid-template-columns: 50% 50%;}
-  .mentor_rectangle div img{grid-area: 1/1/6/2;
-  width: 100%;
-height: 100%;}
-  .mentor_rectangle div p{text-align: center;
+    .mentor_rectangle div {
+      background-color: #71855E;
+      width: 45vw;
+      margin: 2px;
+      display: grid;
+      grid-template-columns: 50% 50%;}
+      .mentor_rectangle div img{grid-area: 1/1/6/2;
+      width: 100%;
+      height: 100%;
+    }
+    .mentor_rectangle div p{
+      text-align: center;
   }
-  .mentor_rectangle div li{list-style: none;}
+  .mentor_rectangle div li{
+    list-style: none;
+  }
   .button{
     font: bold 11px Arial;
   text-decoration: none;
@@ -74,6 +90,7 @@ height: 100%;}
   .item_logo_2{
     grid-area: 1/1/3/2;
     text-align: center;
+    margin-top: 5px;
   }
   .item_slogan{
     grid-area: 3/1/5/2;
@@ -85,12 +102,26 @@ height: 100%;}
     grid-area: 1/2/2/3;
     font-weight: bold;
   }
-  .item_email_address{
-    grid-area: 2/2/3/3;
+  .contact_list{
+    grid-area: 2/2/4/3;
+    list-style-type: none;
+    margin-left: -40px;
+    margin-top: -10px;
   }
-  .item_phone_number{
-    grid-area: 3/2/4/3;
+  .footer li{
+    margin-bottom: 5px;
   }
+  .item_go_to{
+    grid-area: 1/3/2/4;
+    font-weight: bold;
+  }
+  .go_to_list{
+    grid-area: 2/3/5/4;
+    list-style-type: none;
+    margin-left: -40px;
+    margin-top: -10px;
+  }
+ 
     </style>
   </head>
   <body>
@@ -163,24 +194,21 @@ height: 100%;}
       <div class="item_logo_2"><img src="images/PeerMentor_Logo.svg" alt="Logo"></div>
       <div class="item_slogan"><p>Peer-Mentored Pathways to Top Internships</p></div>
       <div class="item_contact_details"><p>Contact:</p></div>
-      <div class="item_email_address"><a href="mailto:info@peermentor.me">Email: info@peermentor.me</a></div>
-      <div class="item_phone_number"><a href="tel:+17813666450">Phone: +1 781 366 6450</a></div>
+      <ul class="contact_list">
+      <li><div class="item_email_address"><a href="mailto:info@peermentor.me">Email: info@peermentor.me</a></div></li>
+      <li><div class="item_phone_number"><a href="tel:+17813666450">Phone: +1 781 366 6450</a></div></li>
       <!-- Figured out how to link to a phone number using https://www.campaignmonitor.com/blog/email-marketing/using-phone-numbers-in-html-email/#:~:text=Start%20your%20code%20with%20%3Ca,href%3D%20%E2%80%9Ctel%3A%2BYOURNUMBERHERE%E2%80%9D -->
-      <div class="item_linkedin"><a href="https://www.linkedin.com/company/peermentor/">LinkedIn: PeerMentor</a></div>
+      <li><div class="item_linkedin"><a href="https://www.linkedin.com/company/peermentor/">LinkedIn: PeerMentor</a></div></li>
+    </ul>
       <div class="item_go_to"><p>Go to:</p></div>
-      <div class="item_home"><a href="index.html">Home</a></div>
-      <div class="item_find_mentor"><a href="find_mentor.html">Find Mentor</a></div>
-      <div class="item_application_enhancer"><a href="application_enhancer.html">Application Enhancer</a></div>
-      <div class="item_contact_us"><a href="contact_us.html">Contact Us</a></div>
-
+      <ul class="go_to_list">
+      <li><div class="item_home"><a href="index.html">Home</a></div></li>
+      <li><div class="item_find_mentor"><a href="find_mentor.html">Find Mentor</a></div></li>
+      <li><div class="item_application_enhancer"><a href="application_enhancer.html">Application Enhancer</a></div></li>
+      <li><div class="item_contact_us"><a href="contact_us.html">Contact Us</a></div></li>
+    </ul>
     </div>
-    <h1>PeerMentor</h1>
-    <a href="Project+Proposal.html">Project Proposal</a>
-    <a href="https://github.com/geraldboylan/PeerMentor">GitHub Repository</a>
-    <a
-      href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FLN1uL2qvrx4GuvIJHfNBtB%2FWebTech-Project-team-library%3Fnode-id%3D0%253A1%26t%3D8kKQZDZwHwHMO4Hl-1"
-      >Figma Mockup</a
-    >
+    
     <script>
       const bannerArray = [
         "images/Step 1 Banner.svg",
