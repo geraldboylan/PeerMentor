@@ -121,6 +121,47 @@
     margin-left: -40px;
     margin-top: -10px;
   }
+
+  .slideshow-container {
+  position: relative;
+}
+
+.slideshow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideshow img {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+.slideshow img.active {
+  display: block;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: bold;
+  padding: 16px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
  
     </style>
   </head>
@@ -140,12 +181,22 @@
     </div>
     </div>
 
-    <img  id="banner-img" src="images/Step 1 Banner.svg" />
+    <div class="slideshow-container">
+      <div class="slideshow">
+        <img src="images/Step 1 Banner.svg">
+        <img src="images/Step 2 Banner.svg">
+        <img src="images/Step 3 Banner.svg">
+        <img src="images/Step 4 Banner.svg">
+      </div>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
     <h1>Top Mentors</h1>
 
     <div class="mentor_rectangle">
       <div>
-        <img src="images/girl_headshot.jpg" alt="Christina Brady">
+        <img src="images/girl_headshot.jpg" alt="christina_brady">
         <p>Christina Brady</p>
         <p>Olin College - Computer Science</p>
         <ul>
@@ -211,23 +262,49 @@
     
     <script>
       const bannerArray = [
-        "images/Step 1 Banner.svg",
-        "images/Step 2 Banner.svg",
-        "images/Step 3 Banner.svg",
-        "images/Step 4 Banner.svg",
-      ];
-      let currentBannerIndex = 0;
+  "images/Step 1 Banner.svg",
+  "images/Step 2 Banner.svg",
+  "images/Step 3 Banner.svg",
+  "images/Step 4 Banner.svg",
+];
 
-      function changeBanner() {
-        currentBannerIndex++;
-        if (currentBannerIndex >= bannerArray.length) {
-          currentBannerIndex = 0;
-        }
-        const bannerImg = document.getElementById("banner-img");
-        bannerImg.setAttribute("src", bannerArray[currentBannerIndex]);
-      }
+let slideIndex = 0;
+let slideshowInterval = null;
 
-      setInterval(changeBanner, 5000);
+function initSlideshow() {
+  const slideshow = document.querySelector(".slideshow");
+  const images = slideshow.querySelectorAll("img");
+  const prevButton = document.querySelector(".prev");
+  const nextButton = document.querySelector(".next");
+
+  // Set initial slide
+  images[slideIndex].classList.add("active");
+
+  // Previous slide button
+  prevButton.addEventListener("click", () => {
+    clearInterval(slideshowInterval);
+    images[slideIndex].classList.remove("active");
+    slideIndex = (slideIndex - 1 + images.length) % images.length;
+    images[slideIndex].classList.add("active");
+  });
+
+  // Next slide button
+  nextButton.addEventListener("click", () => {
+    clearInterval(slideshowInterval);
+    images[slideIndex].classList.remove("active");
+    slideIndex = (slideIndex + 1) % images.length;
+    images[slideIndex].classList.add("active");
+  });
+
+  // Automatic slideshow
+  slideshowInterval = setInterval(() => {
+    images[slideIndex].classList.remove("active");
+    slideIndex = (slideIndex + 1) % images.length;
+    images[slideIndex].classList.add("active");
+  }, 5000);
+}
+
+initSlideshow();
 
     </script>
   </body>
