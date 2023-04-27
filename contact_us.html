@@ -69,26 +69,21 @@
   <h2>
     Contact us form:
   </h2>
-    <form
-      action="mailto:gboylan1@babson.edu"
-      method="post"
-      enctype="text/plain"
-    >
-      <label for="first_name">First Name:</label>
-      <input type="text" id="first_name" name="first_name" required /><br />
-
-      <label for="last_name">Last Name:</label>
-      <input type="text" id="last_name" name="last_name" required /><br />
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required /><br />
-
-      <label for="query" id="query_label">Query:</label>
-      <textarea id="query" name="query" rows="5" cols="40" required></textarea
-      ><br />
-
-      <input type="submit" value="Submit" />
-    </form>
+  <form id="contact-form" method="post" action="mailto:gboylan1@babson.edu?subject=PeerMentor Query" enctype="text/plain">
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required /><br />
+  
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required /><br />
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required /><br />
+  
+    <label for="query" id="query_label">Query:</label>
+    <textarea id="query" name="query" rows="5" cols="40" required></textarea><br />
+  
+    <input type="submit" value="Submit" onclick="addValuesToEmailBody()" />
+  </form>
   </div>
   <div class="map">
     <iframe
@@ -120,5 +115,19 @@
   <li><div class="item_contact_us"><a href="contact_us.html">Contact Us</a></div></li>
 </ul>
 </div>
+<script>
+  const form = document.querySelector('form');
+const firstNameInput = document.getElementById('first_name');
+const lastNameInput = document.getElementById('last_name');
+const emailInput = document.getElementById('email');
+const queryInput = document.getElementById('query');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const subject = encodeURIComponent('PeerMentor Query');
+  const body = encodeURIComponent(`Hi PeerMentor,\n\nMy name is ${firstNameInput.value} ${lastNameInput.value}.\n\nMy email is ${emailInput.value}.\n\n${queryInput.value}\n\nRegards,\n\n${firstNameInput.value}`);
+  window.location.href = `mailto:gboylan1@babson.edu?subject=${subject}&body=${body}`;
+});
+</script>
   </body>
 </html>
