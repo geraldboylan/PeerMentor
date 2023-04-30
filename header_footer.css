@@ -36,6 +36,10 @@ a {
   text-decoration: none;
   color: black;
 }
+a:hover{
+  text-decoration: none;
+  color: #4D6630;
+}
 .peer {
   font-style: italic;
 }
